@@ -1,0 +1,61 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <AssemblyName>TypewriterDialogue</AssemblyName>
+    <RootNamespace>TypewriterDialogue</RootNamespace>
+    <LangVersion>latest</LangVersion>
+    <OutputPath>..\..\TypewriterDialogue\</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <!-- UMM's 0Harmony targets net48 but we target net472; safe to ignore at build time -->
+    <NoWarn>MSB3275</NoWarn>
+  </PropertyGroup>
+
+  <!--
+    All HintPaths point to the default Steam install of Pathfinder: WotR.
+    If your game is installed elsewhere, update the paths below.
+    IMPORTANT: UnityModManagerNet.dll only exists AFTER installing Unity Mod Manager.
+  -->
+
+  <PropertyGroup>
+    <WotRManaged>C:\Program Files (x86)\Steam\steamapps\common\Pathfinder Second Adventure\Wrath_Data\Managed</WotRManaged>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Unity Mod Manager (assembly=UnityModManager, namespace=UnityModManagerNet) -->
+    <Reference Include="UnityModManager">
+      <HintPath>$(WotRManaged)\UnityModManager\UnityModManager.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+
+    <!-- Unity Engine -->
+    <Reference Include="UnityEngine">
+      <HintPath>$(WotRManaged)\UnityEngine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>$(WotRManaged)\UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+
+    <!-- IMGUI - needed for GUILayout in UMM OnGUI callback -->
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>$(WotRManaged)\UnityEngine.IMGUIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+
+    <!-- Input - needed for Input.GetMouseButtonDown / GetKeyDown -->
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>$(WotRManaged)\UnityEngine.InputLegacyModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+
+    <!--
+      DO NOT add a reference to Unity.TextMeshPro.dll.
+      All TMPro access is via reflection to avoid hard dependencies.
+    -->
+  </ItemGroup>
+
+</Project>

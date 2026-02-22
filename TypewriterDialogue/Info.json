@@ -1,0 +1,9 @@
+{
+  "Id": "TypewriterDialogue",
+  "DisplayName": "Typewriter Dialogue Effect",
+  "Author": "feder",
+  "Version": "1.0.0",
+  "ManagerVersion": "0.27.0",
+  "AssemblyName": "TypewriterDialogue.dll",
+  "EntryMethod": "TypewriterDialogue.Main.Load"
+}
