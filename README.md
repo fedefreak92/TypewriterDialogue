@@ -331,3 +331,9 @@ All settings are in `Config.cs` and can also be changed at runtime via UMM GUI.
 3. That's it. No game files are modified.
 
 To also remove UMM itself, run `UnityModManager.exe` and click **Uninstall**.
+
+---
+
+## Support
+
+If you enjoy this mod, consider [buying me a coffee](https://buymeacoffee.com/federicomo8) ☕
